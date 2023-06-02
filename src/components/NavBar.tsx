@@ -30,7 +30,7 @@ const NavBar: React.FC = () => {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+console.log(process.env.NODE_ENV)
   const logout = async () => {
     await signOut({callbackUrl: process.env.NODE_ENV === 'production' ? 'https://cv-builder-project-ohad.netlify.app/login' :`${window.location.origin}`});
   };

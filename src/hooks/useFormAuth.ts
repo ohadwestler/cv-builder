@@ -11,7 +11,6 @@ export const useFormSubmit = (isSignUp: boolean) => {
     const res = await axios.post(url, formData, {
       headers: { "Content-Type": "application/json" },
     });
-
     await signIn("credentials", {
       redirect: false,
       email: formData.email as string,
