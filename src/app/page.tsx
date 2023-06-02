@@ -1,6 +1,6 @@
 'use client'
-import { Box, Button, Container, Typography } from '@mui/material';
-import { useRouter } from 'next/navigation';
+import { Box, Button, Container, Typography, Alert } from '@mui/material';
+import { useRouter } from 'next/router';
 import { NextPage } from 'next';
 
 const HomePage: NextPage = () => {
@@ -47,6 +47,9 @@ const HomePage: NextPage = () => {
             Create your CV
           </Button>
           <Box sx={{ mt: 4 }}>
+            <Alert severity="info">
+              Please note: Due to high hosting costs, the CV creation functionality is currently only available in the local setup of the application. 
+            </Alert>
             <Typography variant="h6" component="h3">
               Why use our CV Builder?
             </Typography>
