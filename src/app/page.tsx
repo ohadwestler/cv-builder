@@ -1,6 +1,6 @@
 'use client'
 import { Box, Button, Container, Typography, Alert } from '@mui/material';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { NextPage } from 'next';
 
 const HomePage: NextPage = () => {
