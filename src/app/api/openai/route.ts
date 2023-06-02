@@ -19,7 +19,6 @@ export async function POST(req: NextRequest) {
     const body = JSON.parse(await req.text());
     const messages = [...body];
     if (body.length >= 7) {
-      console.log("here");
       messages.push({
         role: "system",
         content:
@@ -30,7 +29,6 @@ export async function POST(req: NextRequest) {
     if (body.length > 8) {
       throw new Error("Too many messages");
     }
-    console.log(messages);
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [

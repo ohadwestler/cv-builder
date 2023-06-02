@@ -75,8 +75,6 @@ const ResumeWeb: React.FC<Props> = ({ data }) => {
   const { linkedin, github, email, phone } = contacts || {};
   const { languages, volunteerExperience } = additionalProperties || {};
 
-  console.log(data);
-
   return (
     <ProtectedRoute>
       {data ? (

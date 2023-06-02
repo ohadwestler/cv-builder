@@ -32,7 +32,7 @@ const NavBar: React.FC = () => {
   };
 
   const logout = async () => {
-    await signOut();
+    await signOut({callbackUrl: `${window.location.origin}`});
   };
 
   const navLinksConnected: NavLink[] = [

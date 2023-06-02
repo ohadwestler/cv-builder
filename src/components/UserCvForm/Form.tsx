@@ -36,7 +36,6 @@ interface FormStepProps {
 const FormStep: React.FC<FormStepProps> = ({ fields }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("submit");
   };
 
   return (

@@ -19,13 +19,14 @@ interface MessagesState {
   messages: Message[];
   codeBlocks: string[];
   loading: boolean;
+  error: boolean
 }
 
 const initialState: MessagesState = {
   messages: [
     {
       message:
-        "Based on your CV details, I have some questions that would help me to provide you the best CV possible...",
+        "Based on your CV details, I have some questions that would help me to provide you the best CV possible... Please pay attention that due to the high cost of the API, the chat is limited to 3 responses from your side. after that, the chat will be finished and you will be able to see your CV.",
       timestamp: "",
       photoURL: "",
       displayName: "CVGenius",
@@ -34,6 +35,7 @@ const initialState: MessagesState = {
   ],
   codeBlocks: [],
   loading: false,
+  error: false,
 };
 let cvDetails = ""
 export const addMessage = createAsyncThunk(
@@ -124,6 +126,7 @@ const messagesSlice = createSlice({
     });
     builder.addCase(addMessage.rejected, (state) => {
       state.loading = false;
+      state.error = true;
     });
   },
 });

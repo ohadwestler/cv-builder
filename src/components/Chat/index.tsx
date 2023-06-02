@@ -35,7 +35,7 @@ const MessagesBody = styled(Paper)({
 });
 
 const Chat: React.FC = () => {
-  const {messages, loading} = useSelector((state: RootState) => state.messages);
+  const {messages, loading, error} = useSelector((state: RootState) => state.messages);
   const dispatch = useDispatch<AppDispatch>()
   useEffect(() => {
     dispatch(addMessage({
@@ -73,6 +73,14 @@ const Chat: React.FC = () => {
           {loading && (
             <MessageLeft
               message="Typing..."
+              timestamp=""
+              photoURL=""
+              displayName="Assistant"
+            />
+          )}
+          {error && (
+            <MessageLeft
+              message="Error occured please refresh the page and try again"
               timestamp=""
               photoURL=""
               displayName="Assistant"

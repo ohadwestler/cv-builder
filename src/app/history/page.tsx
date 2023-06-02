@@ -59,8 +59,6 @@ const HistoryPage: NextPage = () => {
 
   const { cvs, loading } = useSelector((state: RootState) => state.cvs);
 
-  console.log("cvs", cvs);
-
   useEffect(() => {
     let parsingError = false;
     const parsedCvs: CV[] = cvs
