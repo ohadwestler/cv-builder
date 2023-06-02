@@ -40,7 +40,6 @@ export async function POST(req: NextRequest) {
         ...messages,
       ],
     });
-
     return new NextResponse(
       JSON.stringify(completion?.data?.choices?.[0]?.message?.content),
       { status: 200 }
