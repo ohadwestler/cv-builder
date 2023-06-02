@@ -15,7 +15,7 @@ export const useFormSubmit = (isSignUp: boolean) => {
       redirect: false,
       email: formData.email as string,
       password: formData.password as string,
-      callbackUrl: process.env.NODE_ENV === 'production' ? 'https://cv-builder-project-ohad.netlify.app/login' :`${window.location.origin}`,
+      callbackUrl: `${window.location.origin}/login`,
     });
 
     if (res.status === 200) {
