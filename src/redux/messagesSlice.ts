@@ -76,7 +76,7 @@ export const addMessage = createAsyncThunk(
         {content : payload.message.message, role: payload.message.role}
       );
     if (allMessagesAndPrompts.length <= 8) {
-      const response = await axios.post("/api/openai", allMessagesAndPrompts, {
+      const response = await axios.post(process.env.NODE_ENV === 'development'? "/api/openai" : '../netlify/functions/openai-route-background', allMessagesAndPrompts, {
         headers: {
           "Content-Type": "application/json",
         },
