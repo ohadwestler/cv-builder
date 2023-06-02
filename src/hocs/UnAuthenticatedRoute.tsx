@@ -15,7 +15,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
     useEffect(() => {
         
         if (!loading && session) {
-            router.push(process.env.NODE_ENV === 'production' ? 'https://cv-builder-project-ohad.netlify.app/login' :`/`);
+            router.push("/");
         }
     }, [loading, session, router]);
 
