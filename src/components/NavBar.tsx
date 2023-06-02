@@ -32,7 +32,7 @@ const NavBar: React.FC = () => {
   };
 
   const logout = async () => {
-    await signOut({callbackUrl: `${window.location.origin}`});
+    await signOut({callbackUrl: process.env.NODE_ENV === 'production' ? 'https://cv-builder-project-ohad.netlify.app/login' :`${window.location.origin}`});
   };
 
   const navLinksConnected: NavLink[] = [
