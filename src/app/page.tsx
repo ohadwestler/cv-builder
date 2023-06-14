@@ -48,7 +48,7 @@ const HomePage: NextPage = () => {
           </Button>
           <Box sx={{ mt: 4 }}>
             <Alert severity="info">
-              Please note: Due to high hosting costs, the CV creation functionality is currently only available in the local setup of the application. 
+              Please note: Due to high hosting costs, the CV creation functionality may work better in the local setup of the application. 
             </Alert>
             <Typography variant="h6" component="h3">
               Why use our CV Builder?

@@ -12,9 +12,6 @@ Additionally, this application is powered by AI technology using OpenAI's Chat G
 
 The application is deployed on Netlify and can be accessed at [https://cv-builder-project-ohad.netlify.app/](https://cv-builder-project-ohad.netlify.app/)
 
-## Important Note about Live Site
-
-Due to high hosting costs associated with the CV creation functionality, the live site currently does not support the CV creation feature. However, you can run this application locally to fully experience the CV creation process. The CV Builder works perfectly when set up and run on a local environment.
 
 ## Tech Stack
 
