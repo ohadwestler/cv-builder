@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import User from "@/model/User";
 import { getToken } from "next-auth/jwt";
+import dbConnect from "@/lib/dbConnect";
 
 export async function POST(req: NextRequest) {
   try {
@@ -9,6 +10,7 @@ export async function POST(req: NextRequest) {
     if (!token) {
       throw new Error("Unauthorized");
     }
+    await dbConnect()
     const body = JSON.parse(await req.text());
     const { codeBlocks } = body;
     const now = new Date();

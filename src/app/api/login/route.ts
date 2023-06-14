@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import dbConnect from "@/lib/dbConnect";
 import User from "@/model/User";
 import bcrypt from "bcrypt";
 import { getToken } from "next-auth/jwt";
@@ -21,6 +22,7 @@ const validateForm = async (
     return { error: "Email is invalid" };
   }
 
+  await dbConnect();
   const emailUser = await User.findOne({ email: email });
   const users = await User.find({});
   console.log(users);
