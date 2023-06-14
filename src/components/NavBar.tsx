@@ -19,13 +19,12 @@ interface NavLink {
   name: string;
   path: string;
 }
-
 const NavBar: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -45,7 +44,8 @@ console.log(process.env.NODE_ENV)
    { name: 'Signup', path: '/signup'}
   ];
 
-  const navLinks = session ? navLinksConnected : navLinksDissconnected;
+  const loading = status === "loading";
+  const navLinks = session && !loading ? navLinksConnected : navLinksDissconnected;
 
   const renderNavLinks = (color: "inherit", logoutButton = false) =>
     navLinks

@@ -24,7 +24,8 @@ const validateForm = async (
 
   await dbConnect();
   const emailUser = await User.findOne({ email: email });
-
+  const users = await User.find({});
+  console.log(users);
   if (!emailUser) {
     return { error: "User with this email does not exist" };
   }

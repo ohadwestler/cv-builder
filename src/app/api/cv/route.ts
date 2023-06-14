@@ -9,7 +9,6 @@ export async function POST(req: NextRequest) {
     if (!token) {
       throw new Error("Unauthorized");
     }
-
     const body = JSON.parse(await req.text());
     const { codeBlocks } = body;
     const now = new Date();
@@ -27,7 +26,7 @@ export async function POST(req: NextRequest) {
 
     return new NextResponse(
       JSON.stringify({
-        msg: "Successfully added new CV to user: " + updatedUser.id,
+        msg: "Successfully added new CV to user",
       }),
       { status: 200 }
     );

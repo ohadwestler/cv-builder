@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
       throw new Error("Too many messages");
     }
     const completion = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
+      model: "gpt-3.5-turbo-0613",
       messages: [
         {
           role: "system",
@@ -45,7 +45,6 @@ export async function POST(req: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-    console.log(error);
     return new NextResponse(JSON.stringify({ error: "An error occurred" }), {
       status: 500,
     });

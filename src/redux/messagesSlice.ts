@@ -76,13 +76,13 @@ export const addMessage = createAsyncThunk(
         {content : payload.message.message, role: payload.message.role}
       );
     if (allMessagesAndPrompts.length <= 8) {
-      const response = await axios.post(process.env.NODE_ENV === 'development'? "/api/openai" : '../netlify/functions/openai-route-background', allMessagesAndPrompts, {
+      const response = await axios.post("/api/openai" , allMessagesAndPrompts, {
         headers: {
           "Content-Type": "application/json",
         },
       });
 
-      const codeBlockRegex = /```(?:json)?\n([\s\S]*?)```/g;
+      const codeBlockRegex = /```(?:json|javascript)?\n([\s\S]*?)```/g;
       let match;
       let codeBlocks = [];
 
